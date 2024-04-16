@@ -52,6 +52,12 @@ class App extends Component{
 
     }
     render(){
+        const loadingStyle={
+            position:'absolute',
+            top:'50%',
+            left:'50%',
+            transform:'translate(-50%,-50%)'
+        }
         const{datas,loading, suggestion}=this.state
         if(datas.length>0&&!loading){
             return(
@@ -71,7 +77,9 @@ class App extends Component{
             )
         }else{
             return(
-                <h1>Loading...</h1>
+                <div style={loadingStyle}>
+                    <h1 >Loading...</h1>
+                </div>
             )
         }
     }
